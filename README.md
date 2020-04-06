@@ -29,22 +29,22 @@
 ### 2. 極端に解像度を落としてみる
 
 - Wi-Fiモード: AP
-- 映像設定: QQVGA(160x120), JPEG(Q15), 30fps
+- 映像設定: QQVGA(160x120), JPEG(Q15), 60fps
 - 転送方式: HTTP, Motion JPEG
 - 表示手段: PC上のブラウザ
 
 ### 3. PC側をアクセスポイントとしてみる
 
 - Wi-Fiモード: Station
-- 映像設定: QQVGA(160x120), JPEG(Q15), 30fps
+- 映像設定: QQVGA(160x120), JPEG(Q15), 60fps
 - 転送方式: HTTP, Motion JPEG
 - 表示手段: PC上のブラウザ
 
 ### 4. UDPで送信してみる
 
 - Wi-Fiモード: Station
-- 映像設定: QQVGA(160x120), JPEG(Q15), 30fps
-- 転送方式: HTTP, Motion JPEG
+- 映像設定: QQVGA(160x120), JPEG(Q15), 60fps
+- 転送方式: UDP(独自フォーマット), JPEG
 - 表示手段: PC上の専用アプリ(要開発)
 
 ### メモ

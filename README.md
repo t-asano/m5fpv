@@ -15,9 +15,11 @@
 
 ## 開発環境の整備
 
-準備中
+- ESP-IDF Tools Installerを実行すればOK
+  - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/windows-setup.html
+  - PythonとGitも必要(無ければついでにインストールされる)
 
-## 試作
+## 実験
 
 ### 1. 工場出荷状態の実力値を見る
 

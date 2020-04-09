@@ -33,6 +33,7 @@ static EventGroupHandle_t s_wifi_event_group;
 static ip4_addr_t s_ip_addr;
 const int CONNECTED_BIT = BIT0;
 extern void led_brightness(int duty);
+
 static camera_config_t camera_config = {
     .pin_reset = CAM_PIN_RESET,
     .pin_xclk = CAM_PIN_XCLK,
@@ -87,12 +88,10 @@ void app_main()
         led_brightness(20);
     }
 
-#ifdef FISH_EYE_CAM
-    // flip img, other cam setting view sensor.h
+    // flip img
     sensor_t *s = esp_camera_sensor_get();
     s->set_vflip(s, 1);
     s->set_hmirror(s, 1);
-#endif
 
 #ifdef CAM_USE_WIFI
     wifi_init_softap();

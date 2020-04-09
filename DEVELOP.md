@@ -30,7 +30,7 @@ ESP-IDF v4系では動作しないためv3系の最新版をセットアップ�
     - Camera model
       - Camera board : M5-Camera B
     - Serial flasher config
-      - Default serial port : /dev/ttyS2 ※適宜変更
+      - Default serial port : COM3 ※適宜変更
       - Default baud rate : 921600 baud
       - 'idf.py monitor' baud rate : 115200 baud
     - Partition Table

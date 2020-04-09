@@ -19,8 +19,8 @@
 static const char* TAG = "camera";
 #define CAM_USE_WIFI
 
-#define ESP_WIFI_SSID "M5Psram_Cam"
-#define ESP_WIFI_PASS ""
+#define ESP_WIFI_SSID "WiFiFPV"
+#define ESP_WIFI_PASS "m5fpvpass"
 
 #define MAX_STA_CONN  1
 

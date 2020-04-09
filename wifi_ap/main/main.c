@@ -88,10 +88,12 @@ void app_main()
         led_brightness(20);
     }
 
+#if 0
     // flip img
     sensor_t *s = esp_camera_sensor_get();
     s->set_vflip(s, 1);
     s->set_hmirror(s, 1);
+#endif
 
 #ifdef CAM_USE_WIFI
     wifi_init_softap();

@@ -20,50 +20,52 @@
 
 開発環境の詳細については、[こちら](DEVELOP.md)のドキュメントを参照のこと。
 
-## 実験
+## 実験1. リファレンス実装の実力値を見る
 
-### 1. リファレンス実装の実力値を見る
-
-#### 条件
+### 条件
 
 - Wi-Fiモード : AP
 - 映像設定 : SVGA(800x600), JPEG(Q15), 30fps
 - 転送方式 : MJPEG over HTTP
 - 表示手段 : PC上のブラウザ
 
-#### 結果
+### 結果
 
-<a href="docs/exp01.mp4"><img src="docs/exp01.jpg" width="200"></a>
+<a href="docs/exp01.mp4?raw=true"><img src="docs/exp01.jpg" width="200"></a>
 - フレームレート : 25~30fps
 - 遅延 : 約130ms
 
-### 2. 極端に解像度を落としてみる
+## 実験2. 極端に解像度を落としてみる
 
-#### 条件
+### 条件
 
 - Wi-Fiモード: AP
 - 映像設定: QQVGA(160x120), JPEG(Q15), 60fps
 - 転送方式: MJPEG over HTTP
 - 表示手段: PC上のブラウザ
 
-#### 結果
+### 結果
 
-<a href="docs/exp02.mp4"><img src="docs/exp02.jpg" width="200"></a>
+<a href="docs/exp02.mp4?raw=true"><img src="docs/exp02.jpg" width="200"></a>
 - フレームレート : 50~55fps
 - 遅延 : 約100ms
 
-### 3. PC側をアクセスポイントとしてみる
+## 実験3. PC側をアクセスポイントとしてみる
+
+### 条件
 
 - Wi-Fiモード: Station
 - 映像設定: QQVGA(160x120), JPEG(Q15), 60fps
-- 転送方式: HTTP, Motion JPEG
+- 転送方式: MJPEG over HTTP
 - 表示手段: PC上のブラウザ
 
-### 4. UDPで送信してみる
+## 実験4. UDPで送信してみる
+
+### 条件
 
 - Wi-Fiモード: Station
 - 映像設定: QQVGA(160x120), JPEG(Q15), 60fps
-- 転送方式: UDP(独自フォーマット), JPEG
+- 転送方式: UDP(独自フォーマット)
 - 表示手段: PC上の専用アプリ(要開発)
 
 ### メモ

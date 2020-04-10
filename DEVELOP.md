@@ -32,7 +32,7 @@ ESP-IDF v4系では動作しないためv3系の最新版をセットアップ�
     - Serial flasher config
       - Default serial port : COM3 ※適宜変更
       - Default baud rate : 921600 baud
-      - 'idf.py monitor' baud rate : 115200 baud
+      - 'make monitor' baud rate : 115200 baud
     - Partition Table
       - Offset of partition table : 0x10000
 - ビルド

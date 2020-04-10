@@ -19,15 +19,8 @@
 static const char* TAG = "camera";
 #define CAM_USE_WIFI
 
-#if 0
-#define ESP_WIFI_SSID "M5Psram_Cam"
-#define ESP_WIFI_PASS ""
-#else
-
-#define ESP_WIFI_SSID "M5-2.4G"
-#define ESP_WIFI_PASS "Office@888888"
-
-#endif
+#define ESP_WIFI_SSID "WiFiFPV"
+#define ESP_WIFI_PASS "m5fpvpass"
 
 #define MAX_STA_CONN  1
 
@@ -40,6 +33,7 @@ static EventGroupHandle_t s_wifi_event_group;
 static ip4_addr_t s_ip_addr;
 const int CONNECTED_BIT = BIT0;
 extern void led_brightness(int duty);
+
 static camera_config_t camera_config = {
     .pin_reset = CAM_PIN_RESET,
     .pin_xclk = CAM_PIN_XCLK,
@@ -64,7 +58,20 @@ static camera_config_t camera_config = {
     .ledc_channel = LEDC_CHANNEL_0,
 
     .pixel_format = PIXFORMAT_JPEG,//YUV422,GRAYSCALE,RGB565,JPEG
-    .frame_size = FRAMESIZE_SVGA,//QQVGA-UXGA Do not use sizes above QVGA when not JPEG
+
+    // QQVGA-UXGA
+    // Do not use sizes above QVGA when not JPEG
+    //
+    // FRAMESIZE_QQVGA 160x120
+    // FRAMESIZE_QCIF  176x144
+    // FRAMESIZE_QVGA  320x240
+    // FRAMESIZE_CIF   400x296
+    // FRAMESIZE_VGA   640x480
+    // FRAMESIZE_SVGA  800x600
+    //
+    //.frame_size = FRAMESIZE_SVGA, // exp1
+    //.frame_size = FRAMESIZE_QQVGA, // exp2
+    .frame_size = FRAMESIZE_CIF, // exp3,4
 
     .jpeg_quality = 15, //0-63 lower number means higher quality
     .fb_count = 2 //if more than one, i2s runs in continuous mode. Use only with JPEG

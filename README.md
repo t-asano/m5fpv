@@ -26,19 +26,31 @@
 
 #### 条件
 
+- Wi-Fiモード : AP
+- 映像設定 : SVGA(800x600), JPEG(Q15), 30fps
+- 転送方式 : MJPEG over HTTP
+- 表示手段 : PC上のブラウザ
+
+#### 結果
+
+<a href="docs/exp01.mp4"><img src="docs/exp01.jpg" width="200"></a>
+- フレームレート : 25~30fps
+- 遅延 : 約130ms
+
+### 2. 極端に解像度を落としてみる
+
+#### 条件
+
 - Wi-Fiモード: AP
-- 映像設定: SVGA(800x600), JPEG(Q15), 30fps
-- 転送方式: HTTP, Motion JPEG
+- 映像設定: QQVGA(160x120), JPEG(Q15), 60fps
+- 転送方式: MJPEG over HTTP
 - 表示手段: PC上のブラウザ
 
 #### 結果
 
-### 2. 極端に解像度を落としてみる
-
-- Wi-Fiモード: AP
-- 映像設定: QQVGA(160x120), JPEG(Q15), 60fps
-- 転送方式: HTTP, Motion JPEG
-- 表示手段: PC上のブラウザ
+<a href="docs/exp02.mp4"><img src="docs/exp02.jpg" width="200"></a>
+- フレームレート : 50~55fps
+- 遅延 : 約100ms
 
 ### 3. PC側をアクセスポイントとしてみる
 

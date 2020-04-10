@@ -58,7 +58,7 @@ static camera_config_t camera_config = {
     .ledc_channel = LEDC_CHANNEL_0,
 
     .pixel_format = PIXFORMAT_JPEG,//YUV422,GRAYSCALE,RGB565,JPEG
-    
+
     // QQVGA-UXGA
     // Do not use sizes above QVGA when not JPEG
     //
@@ -70,7 +70,8 @@ static camera_config_t camera_config = {
     // FRAMESIZE_SVGA  800x600
     //
     //.frame_size = FRAMESIZE_SVGA, // exp1
-    .frame_size = FRAMESIZE_QQVGA, // exp2
+    //.frame_size = FRAMESIZE_QQVGA, // exp2
+    .frame_size = FRAMESIZE_CIF, // exp3
 
     .jpeg_quality = 15, //0-63 lower number means higher quality
     .fb_count = 2 //if more than one, i2s runs in continuous mode. Use only with JPEG

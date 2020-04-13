@@ -152,6 +152,19 @@ esp_err_t jpg_stream_httpd_handler(httpd_req_t *req){
     uint8_t * _jpg_buf;
     char * part_buf[64];
     static int64_t last_frame = 0;
+    
+    // frame skip
+    int _frame_count = 1;
+    int _frame_skip = 0;
+    if (strcmp(req->uri, "/?skip=3") == 0) {
+        _frame_skip = 3;
+    } else if (strcmp(req->uri, "/?skip=2") == 0) {
+        _frame_skip = 2;
+    } else if (strcmp(req->uri, "/?skip=1") == 0) {
+        _frame_skip = 1;
+    }
+    ESP_LOGI(TAG, "Frame skip: %d", _frame_skip);
+        
     if(!last_frame) {
         last_frame = esp_timer_get_time();
     }
@@ -167,6 +180,15 @@ esp_err_t jpg_stream_httpd_handler(httpd_req_t *req){
             ESP_LOGE(TAG, "Camera capture failed");
             res = ESP_FAIL;
         } else {
+            if (_frame_skip > 0) {
+                if (_frame_count <= _frame_skip) {
+                    esp_camera_fb_return(fb);
+                    _frame_count++;
+                    continue;
+                } else {
+                    _frame_count = 1;
+                }
+            }
             if(fb->format != PIXFORMAT_JPEG){
                 bool jpeg_converted = frame2jpg(fb, 80, &_jpg_buf, &_jpg_buf_len);
                 if(!jpeg_converted){
